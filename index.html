@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 1em 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        section {
+            padding: 4em 2em;
+            min-height: 100vh;
+        }
+        .hidden {
+            display: none;
+        }
+        .project {
+            background: white;
+            padding: 1em;
+            margin: 1em auto;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 1em 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <a href="#" onclick="showSection('about')">About</a>
+            <a href="#" onclick="showSection('projects')">Projects</a>
+            <a href="#" onclick="showSection('contact')">Contact</a>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm a web developer passionate about creating clean and efficient websites.</p>
+    </section>
+    
+    <section id="projects" class="hidden">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project 1</h3>
+            <p>Description of project 1.</p>
+        </div>
+        <div class="project">
+            <h3>Project 2</h3>
+            <p>Description of project 2.</p>
+        </div>
+    </section>
+    
+    <section id="contact" class="hidden">
+        <h2>Contact</h2>
+        <p>Email: your.email@example.com</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Your Name</p>
+    </footer>
+    
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
